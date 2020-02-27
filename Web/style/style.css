@@ -2,6 +2,7 @@
 #menus{
 	margin-left: 970px;
 	
+	
 }
 #a1{
 	margin-left: 10px;
@@ -13,4 +14,23 @@
 	border-left: 1px solid #bec1bf;
 	padding-left: 10px;
 }
+#conten1{
+	background-color: green;
+color:white;
+text-align: center;
+font-size: 18px;
+
+}
+
+
+#elements{
+    width: 1440px;
+    height: 500px;
+
+}
+#contentDesc{
+	padding-right: 305px;
+padding-left: 305px;
+}
+
 
