@@ -15,7 +15,7 @@
 	padding-left: 10px;
 }
 #conten1{
-	background-color: green;
+background-color: green;
 color:white;
 text-align: center;
 font-size: 18px;
@@ -31,6 +31,10 @@ font-size: 18px;
 #contentDesc{
 	padding-right: 305px;
 padding-left: 305px;
+}
+#load{
+	font-size: 20px;
+	padding-top: 56px;
 }
 
 
