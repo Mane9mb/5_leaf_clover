@@ -1,18 +1,33 @@
 
 #menus{
-	margin-left: 64%;
+	margin-left: 68%;
 	
 	
 }
 #a1{
 	margin-left: 10px;
-	border-left: 1px solid #bec1bf;
   	text-align: center;	
-  	padding-left: 15px;
+  	
 }
+#a1.navbar-brand:hover{
+color:green;
+}
+#a2.navbar-brand:hover{
+color:green;
+}
+#a3.navbar-brand:hover{
+color:green;
+}
+#a4.navbar-brand:hover{
+color:green;
+}
+
+
+
+
 #btn{
-	border-left: 1px solid #bec1bf;
-	padding-left: 10px;
+	
+	padding-left: 30px;
 }
 #conten1{
 background-color: green;
@@ -24,7 +39,14 @@ padding-top: 7px;
 
 
 }
+a{
+ 
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
 
+ 
 
 #elements{
     width: 1440px;
