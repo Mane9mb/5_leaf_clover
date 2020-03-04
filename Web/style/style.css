@@ -1,6 +1,6 @@
 
 #menus{
-	margin-left: 67%;
+	margin-left: 77%;
 }
 #a1{
 	margin-left: 10px;
@@ -19,14 +19,28 @@ color:green;
 #a4.navbar-brand:hover{
 color:green;
 }
+#mod1style{
+  color:black;
 
+}
+.navbar{
+  width: 100%;
+}
+.modal-header{
+  background-color:#343a40;
 
-
+}
+#cruz{
+  color: white;
+}
+#titleform{
+  color: black;
+}
 
 
 #btn{
 	
-	padding-left: 30px;
+	padding-left: 10px;
 }
 #conten1{
 background-color: green;
