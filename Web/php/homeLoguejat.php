@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="es">
   <head>
 
@@ -17,6 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/assisten.js"></script>
+    <script type="text/javascript">
+      
+    </script>
 
     <title>Inici</title>
   </head>
@@ -30,14 +33,36 @@
   		  <a  id="a2" class="navbar-brand" href="home.html">Inici</a>
         <a  id="a1"class="navbar-brand" href="ranking.html">Ranking</a>
       </div>
-      <div id = "btn">
-  		  <button   class="btn btn-outline-success my-2 my-sm-0"  data-toggle="modal" data-target="#Modal1">Login</button>
-      </div>
   
 </nav>
-<div>
-<img src="img/as.png" class="responsive" id="elements">
-
+  <br>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
+    margin-top: 2.2%;">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/as.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/kimetsu.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 </div>
 <div id = conten1>
     <h1>Què és 5 LEAF CLOVER?</h1>
@@ -47,6 +72,7 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           info+
   </button>
+</div>
     <div class="container">
   <!-- Trigger the modal with a button -->
 <!-- Modal -->
@@ -86,41 +112,61 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span  id="cruz" aria-hidden="true">&times;</span>
         </button>
+        <script type="text/javascript">
+
+            function validateForm() {
+                  var username= document.getElementById("username").value
+                if (x == "") {
+                  document.getElementById("mess").value
+                  return false;
+                  }
+            }
+           messages:document.getElementById("form-messages")
+
+        </script>
       </div>
       <div class="modal-body">
         <div id="SingIn" class="w3-container city">
-          <form>
+          <form action="logejat.php" method="post">
             <h5 id="ini">Iniciar Sessió</h5>
+            <ul id="form-messages"></ul>
             <label id="titleform">Username</label>
-            <input type="text" class="form-control"  placeholder="First name">
+            <input type="text" class="form-control"  placeholder="First name" name="username" id="username"></label>
+            <span id="error">Datos de ingreso no válidos, inténtelo de nuevo  por favor</span>
+            
             <label id="titleform">Password</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass" id="password">
+            <span id="error">Datos de ingreso no válidos, inténtelo de nuevo  por favor</span>
             <small id="passwordHelpBlock" class="form-text text-muted">
+               <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="btn-submit">Iniciar Sesion</button>
+        </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
           </form>
+
+         
       </div>
        <div id="SingUp" class="w3-container city">
-          <form>
+          <form action="php/prueba.php"  method="post">
             <h5 id="ini">Registrat si ets nou!</h5>
             <label id="titleform">Username</label>
-            <input type="text" class="form-control"  placeholder="First name">
+            <input type="text" class="form-control"  placeholder="First name" name="username">
             <label id="titleform" style="margin-right: 92%; padding-top: 10px;">Email</label>
-            <input type="text" class="form-control"  placeholder="@gmail.com">
+            <input type="text" class="form-control"  placeholder="@gmail.com" name="email">
             <label id="titleform">Password</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass">
             <small id="passwordHelpBlock" class="form-text text-muted">
-            
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+               <button type="submit" class="btn btn-primary">Registrarse</button>
+           </div>
           </form>
       </div>
 
+      </div>
       
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
 </div>
   
 </div>
