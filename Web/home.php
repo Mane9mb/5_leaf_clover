@@ -32,25 +32,19 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  	<nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;">
+    <nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
       <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.html"><h5>5 LEAF CLOVER</h5></a>
 
-  		<div  id="menus" >
-  		<a  id="a2" class="navbar-brand" href="home.html">Inici</a>
-        <a  id="a1"class="navbar-brand" href="ranking.html" >Ranking</a>
-        <a  id="a1"class="navbar-brand" href="lliga.html" >Lliga</a>
-        <a  id="a1"class="navbar-brand" href="perfil.html" >Perfil</a>
+      <div  id="menus" >
+        <a  id="a2" class="navbar-brand" href="#"><span class="fa fa-microphone"></span></a>
+        <a  id="a2" class="navbar-brand" href="home.html">Inici</a>
+        <a  id="a1"class="navbar-brand" href="ranking.html">Ranking</a>
       </div>
       <div id = "btn">
-      <form method="get" action="juego.html">
-  		  <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Jugar</button>
-      </form>
-	</div>
-  </button>
-</nav>
-
-<img src="img/as.png" class="responsive" id="elements">
-
+        <button   class="btn btn-outline-success my-2 my-sm-0"  data-toggle="modal" data-target="#Modal1">Login</button>
+      </div>
+  
+    </nav>
   <br>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
     margin-top: 2.2%;">
@@ -90,10 +84,6 @@
     </div>
 
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          info+
-  </button>
-</div>
     <div class="container">
   <!-- Trigger the modal with a button -->
 <!-- Modal -->
@@ -213,7 +203,27 @@
       
       </div>
       
-      
+      <script>
+document.getElementsByClassName("tablink")[0].click();
+
+function openEvent(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].classList.remove("btn-secondary");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.classList.add("btn-secondary");
+  
+
+}
+
+
+</script>
 
 
 
