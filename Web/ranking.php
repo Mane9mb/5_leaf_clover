@@ -46,7 +46,7 @@ else{
   </head>
   <body style="background-image: url(img/desc.jpg);">
     <nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
-      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.php"><h5>5 LEAF CLOVER</h5></a>
+      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="homeLoguejat.php"><h5>5 LEAF CLOVER</h5></a>
 
       <div  id="menus" >
 

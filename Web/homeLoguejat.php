@@ -53,7 +53,7 @@ else{
   <body>
     
   	<nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
-      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.html"><h5>5 LEAF CLOVER</h5></a>
+      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="homeLoguejat.php"><h5>5 LEAF CLOVER</h5></a>
 
   		<div  id="menus" >
   		  <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
