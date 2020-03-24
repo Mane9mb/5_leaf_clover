@@ -1,25 +1,29 @@
 <?php
+session_start();
+ include 'conexio.php';
 $servername = "localhost";
-$username = "5leaf";
-$password = "manelferran";
+$serverusername = "5leaf";
+$serverpassword = "manelferran";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $serverusername, $serverpassword);
 $conn->select_db('5leafclover');
 
-$sql = "INSERT INTO usuaris (username, email, password)
-        VALUES ('".$_POST["username"]."','".$_POST["email"]."','".$_POST["pass"]."');";
-if (mysqli_query($conn, $sql)) {
+if (isset($_GET['username'])&&isset($_GET['password'])){
+	$username = $_GET['username'];
+	$password = $_GET['password'];
+	$email = $_GET['email'];
 
-      echo "New record created successfully";
-} else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
- $conn->close();
+	
+	$sql =  $sql = "INSERT INTO usuaris (username, email, password)
+        VALUES ('".$username."','".$email."','".$password."');";
+	
+	if (mysqli_query($conn, $sql)) {
+	echo "succes";
+      return "succes";
+	} else {
+	
+      return "falled";
+  }
+}  
 ?>
-<html>
-<body>
-	<?echo $sql;?>
-
-</body>
-</html>

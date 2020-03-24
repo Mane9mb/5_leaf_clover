@@ -1,8 +1,27 @@
-<? php
-incluir 'php/config.php' ; 
-$ conn = OpenCon ( ) ;  
-echo "Conectado con éxito" ; 
-CloseCon ( $ conn ) ;
+<?php
+  session_start();
+
+if(isset($_SESSION["user_id"])){
+  $user_id= $_SESSION["user_id"];
+$servername = "localhost";
+$serverusername = "5leaf";
+$serverpassword = "manelferran";
+
+// Create connection
+$conn = new mysqli($servername, $serverusername, $serverpassword);
+$conn->select_db('5leafclover');
+$data = mysqli_query($conn,"SELECT * FROM `usuaris`WHERE `id_usuario`='{$user_id}'");
+$row_cnt=mysqli_num_rows($data);
+if($row_cnt == 1){
+  $row = mysqli_fetch_array($data);
+  $nom_usuari = $row['username']; 
+}
+
+}
+else{
+  header("Location: home.php");
+  exit;
+}
 
 ?>
 <!DOCTYPE HTML>
@@ -12,7 +31,7 @@ CloseCon ( $ conn ) ;
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/styleLog.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -37,9 +56,10 @@ CloseCon ( $ conn ) ;
       <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.html"><h5>5 LEAF CLOVER</h5></a>
 
   		<div  id="menus" >
-        <a  id="a2" class="navbar-brand" href="#"><span class="fa fa-microphone"></span></a>
-  		  <a  id="a2" class="navbar-brand" href="home.html">Inici</a>
-        <a  id="a1"class="navbar-brand" href="ranking.html">Ranking</a>
+  		  <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
+        <a  id="a1"class="navbar-brand" href="ranking.php">Ranking</a>
+         <a  id="a1"class="navbar-brand" href="perfil.html"><?php echo $nom_usuari;?></a>
+          <a  id="a1"class="navbar-brand" href="php/logout.php">Logout</a>
       </div>
   
 </nav>

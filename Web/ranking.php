@@ -1,3 +1,29 @@
+<?php
+  session_start();
+
+if(isset($_SESSION["user_id"])){
+  $user_id= $_SESSION["user_id"];
+$servername = "localhost";
+$serverusername = "5leaf";
+$serverpassword = "manelferran";
+
+// Create connection
+$conn = new mysqli($servername, $serverusername, $serverpassword);
+$conn->select_db('5leafclover');
+$data = mysqli_query($conn,"SELECT * FROM `usuaris`WHERE `id_usuario`='{$user_id}'");
+$row_cnt=mysqli_num_rows($data);
+if($row_cnt == 1){
+  $row = mysqli_fetch_array($data);
+  $nom_usuari = $row['username']; 
+}
+
+}
+else{
+  header("Location: home.php");
+  exit;
+}
+
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -24,10 +50,10 @@
 
       <div  id="menus" >
 
-       <a  id="a2" class="navbar-brand" href="home.php">Inici</a>
-        <a  id="a1"class="navbar-brand" href="ranking.html" >Ranking</a>
-        <a  id="a1"class="navbar-brand" href="lliga.html" >Lliga</a>
-       <a  id="a1"class="navbar-brand" href="perfil.html" >Perfil</a>
+       <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
+        <a  id="a1"class="navbar-brand" href="ranking.php" >Ranking</a>
+        <a  id="a1"class="navbar-brand" href="lliga.php" >Lliga</a>
+       <a  id="a1"class="navbar-brand" href="perfil.html" ><?php echo $nom_usuari;?></a>
       </div>
       <div id = "btn">
       <form method="get" action="juego.html">
@@ -49,15 +75,19 @@ $(document).ready(function() {
  
     $('#audio').click(function(event) {
         recognition.start();
+        $("#audio").focus(false);
     });
  
     recognition.onresult = function (event) {
-        finalResult =  '';
-        for (var i = event.resultIndex; i < event.results.length; ++i) {
+       $('#searchTerm').val("");
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 finalResult = event.results[i][0].transcript;
                 $('#searchTerm').val(finalResult);
+                recognition.stop();
                 doSearch(finalResult);
+               
+
             }
         }
     };
@@ -118,7 +148,7 @@ $(document).ready(function() {
 </script>
 <div id="texto"></div>   
   <input style="margin-top: 4%; width:35%; display: inline; margin-left: 30%;" type="text" class="form-control" id="searchTerm" placeholder="Search.." aria-label="Username" aria-describedby="addon-wrapping" onkeyup="doSearch()">
-  <button type="button" class="btn btn-dark" id="audio" style="display: inline-block;"><span class="fa fa-microphone" onclick="audio()" ></span></button>
+  <button type="button" class="btn btn-dark" id="audio" style="display: inline-block;"><span class="fa fa-microphone"></span></button>
       <table style="width: 59%; text-align: center; margin-left: 20%;margin-top: 2%;" id="datos">
       <thead>
         <tr>

@@ -1,15 +1,36 @@
 <?php
+session_start();
  include 'conexio.php';
- session_start();
+$servername = "localhost";
+$serverusername = "5leaf";
+$serverpassword = "manelferran";
 
- $sql = "SELECT * FROM usuaris where username = '".$_POST["username"].
-  "' and password = '".$_POST["password"]."'";
- $result = $conn->query($sql);
+// Create connection
+$conn = new mysqli($servername, $serverusername, $serverpassword);
+$conn->select_db('5leafclover');
 
- if($result -> num_rows > 0){
-  $_SESSION["user"] = $_POST["username"];
-  //header('Location: homeLoguejat.php');
-  echo "success";
- }else{
-  echo "fail";
- }
+if (isset($_GET['username'])&&isset($_GET['password'])){
+	$username = $_GET['username'];
+	$password = $_GET['password'];
+	
+	$sql =  "SELECT * FROM `usuaris` WHERE `username` ='{$username}' AND `password`='{$password}'";
+	$data= mysqli_query($conn,$sql);
+
+
+	$row_cnt = mysqli_num_rows($data);
+
+	if($row_cnt == 1){
+		$row = mysqli_fetch_array($data);
+		$id = $row['id_usuario'];
+		
+		$_SESSION['user_id']=$id;
+		echo "succes";
+		return "succes";
+	}
+	else{
+		
+		return "Falled";
+	}
+}
+
+?>

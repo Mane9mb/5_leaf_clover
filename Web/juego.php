@@ -1,3 +1,29 @@
+<?php
+  session_start();
+
+if(isset($_SESSION["user_id"])){
+  $user_id= $_SESSION["user_id"];
+$servername = "localhost";
+$serverusername = "5leaf";
+$serverpassword = "manelferran";
+
+// Create connection
+$conn = new mysqli($servername, $serverusername, $serverpassword);
+$conn->select_db('5leafclover');
+$data = mysqli_query($conn,"SELECT * FROM `usuaris`WHERE `id_usuario`='{$user_id}'");
+$row_cnt=mysqli_num_rows($data);
+if($row_cnt == 1){
+  $row = mysqli_fetch_array($data);
+  $nom_usuari = $row['username']; 
+}
+
+}
+else{
+  header("Location: home.php");
+  exit;
+}
+
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -73,10 +99,10 @@
 
       <div  id="menus" >
 
-      <a  id="a2" class="navbar-brand" href="home.html">Inici</a>
-        <a  id="a1"class="navbar-brand" href="ranking.html" >Ranking</a>
-        <a  id="a1"class="navbar-brand" href="lliga.html" >Lliga</a>
-       <a  id="a1"class="navbar-brand" href="perfil.html" >Perfil</a>
+      <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
+        <a  id="a1"class="navbar-brand" href="ranking.php" >Ranking</a>
+        <a  id="a1"class="navbar-brand" href="lliga.php" >Lliga</a>
+       <a  id="a1"class="navbar-brand" href="perfil.html" ><?php echo $nom_usuari;?></a>
       </div>
       <div id = "btn">
       <form method="get" action="juego.html">
