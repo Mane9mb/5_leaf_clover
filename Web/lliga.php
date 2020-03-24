@@ -61,7 +61,8 @@ else{
       <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
         <a  id="a1"class="navbar-brand" href="ranking.php" >Ranking</a>
         <a  id="a1"class="navbar-brand" href="lliga.php" >Lliga</a>
-       <a  id="a1"class="navbar-brand" href="perfil.html" ><?php echo $nom_usuari;?></a>
+       <a  id="a1"class="navbar-brand" href="perfil.php" ><?php echo $nom_usuari;?></a>
+       <a  id="a1"class="navbar-brand" href="php/logout.php">Logout</a>
       </div>
       <div id = "btn">
       <form method="get" action="juego.html">

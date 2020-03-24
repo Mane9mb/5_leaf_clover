@@ -58,7 +58,7 @@ else{
   		<div  id="menus" >
   		  <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
         <a  id="a1"class="navbar-brand" href="ranking.php">Ranking</a>
-         <a  id="a1"class="navbar-brand" href="perfil.html"><?php echo $nom_usuari;?></a>
+         <a  id="a1"class="navbar-brand" href="perfil.php"><?php echo $nom_usuari;?></a>
           <a  id="a1"class="navbar-brand" href="php/logout.php">Logout</a>
       </div>
   

@@ -1,3 +1,32 @@
+<?php
+  session_start();
+
+if(isset($_SESSION["user_id"])){
+  $user_id= $_SESSION["user_id"];
+$servername = "localhost";
+$serverusername = "5leaf";
+$serverpassword = "manelferran";
+
+// Create connection
+$conn = new mysqli($servername, $serverusername, $serverpassword);
+$conn->select_db('5leafclover');
+$data = mysqli_query($conn,"SELECT * FROM `usuaris`WHERE `id_usuario`='{$user_id}'");
+
+$row_cnt=mysqli_num_rows($data);
+if($row_cnt == 1){
+  $row = mysqli_fetch_array($data);
+  $nom_usuari = $row['username'];
+    $email = $row['email'];
+  $password = $row['password']; 
+}
+
+}
+else{
+  header("Location: home.php");
+  exit;
+}
+
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -24,7 +53,8 @@
       <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
         <a  id="a1"class="navbar-brand" href="ranking.html" >Ranking</a>
         <a  id="a1"class="navbar-brand" href="lliga.html" >Lliga</a>
-       <a  id="a1"class="navbar-brand" href="perfil.html" >Perfil</a>
+       <a  id="a1"class="navbar-brand" href="perfil.html" ><? echo $nom_usuari;?></a>
+       <a  id="a1"class="navbar-brand" href="php/logout.php">Logout</a>
       </div>
       <div id = "btn">
       <form method="get" action="juego.php">
@@ -46,19 +76,19 @@
         </a>
         <fieldset>
           <label>Nom</label>
-          <input  type="text" tabindex="1" autofocus id="dadess" style="width: 59%; margin-left: 29%; margin-top: 7%;" value="Froman" disabled>  
+          <input  type="text" tabindex="1" autofocus id="dadess" style="width: 59%; margin-left: 29%; margin-top: 7%;" value="<? echo $nom_usuari;?>" disabled>  
         </fieldset>
         <fieldset>
           <label>Email</label>
-          <input  type="email" tabindex="2" id="dadess" value="fromanmora@gmail.com" style="width: 59%; margin-left: 28.3%;" disabled> 
+          <input  type="email" tabindex="2" id="dadess" value="<?echo $email;?>" style="width: 59%; margin-left: 28.3%;" disabled> 
         </fieldset>
         <fieldset>
           <label>Contrasenya</label>
-          <input  type="password" tabindex="3" id="dadess" value="froman1" style="width: 59%; margin-left: 18%;"disabled> 
+          <input  type="password" tabindex="3" id="dadess" value="<?echo $password;?>" style="width: 59%; margin-left: 18%;"disabled> 
         </fieldset>
         <fieldset>
           <label>Confirmar Contrasenya</label>
-          <input  type="password" tabindex="3" id="dadess" value="froman1" style="width: 59%; margin-left: 2.3%;"disabled> 
+          <input  type="password" tabindex="3" id="dadess" value="<?echo $password;?>" style="width: 59%; margin-left: 2.3%;"disabled> 
         </fieldset>
       
             <button name="cancel" type="cancel" class="btn btn-danger" style="width: 37%;margin-right: 74px;margin-left: 23px;
