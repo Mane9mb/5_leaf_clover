@@ -32,7 +32,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
+  	<nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
       <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.html"><h5>5 LEAF CLOVER</h5></a>
 
       <div  id="menus" >
@@ -43,7 +43,7 @@
         <button   class="btn btn-outline-success my-2 my-sm-0"  data-toggle="modal" data-target="#Modal1">Login</button>
       </div>
   
-    </nav>
+</nav>
   <br>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
     margin-top: 2.2%;">
@@ -78,13 +78,18 @@
     <h1>Què és 5 LEAF CLOVER?</h1>
     <div id="contentDesc"><p id="desc">Et donem la benvinguda a 5 Leaf CLover, un videojoc animat en 3d on hauràs de passar nivells i millorar per aconseguir completa el joc!
         Podràs aconseguir 2 habilitats, la primera l'hauràs de triar al comensament de la partida, i l'altra et sortirà en un nivell aleatori que t'ajudarà a obtenir la victoria. Hi ha un total de 5 habilitats, escull bé i molta sort!</p>
+     
+    </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           info+
-  </button>     
-    </div>
+      </button>
+
+
 
     </div>
+
+</div>
     <div class="container">
   <!-- Trigger the modal with a button -->
 <!-- Modal -->
