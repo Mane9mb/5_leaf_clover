@@ -1,10 +1,37 @@
-<!doctype html>
+<?php
+  session_start();
+
+if(isset($_SESSION["user_id"])){
+  $user_id= $_SESSION["user_id"];
+$servername = "localhost";
+$serverusername = "5leaf";
+$serverpassword = "manelferran";
+
+// Create connection
+$conn = new mysqli($servername, $serverusername, $serverpassword);
+$conn->select_db('5leafclover');
+$data = mysqli_query($conn,"SELECT * FROM `usuaris`WHERE `id_usuario`='{$user_id}'");
+$row_cnt=mysqli_num_rows($data);
+if($row_cnt == 1){
+  $row = mysqli_fetch_array($data);
+  $nom_usuari = $row['username']; 
+}
+
+}
+else{
+  header("Location: home.php");
+  exit;
+}
+
+?>
+<!DOCTYPE HTML>
+
 <html lang="es">
   <head>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/logejat.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -17,27 +44,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/assisten.js"></script>
-
+    <script type="text/javascript">
+      
+    </script>
+ <link rel="shortcut icon" href="img/5CLOVER.ico" />
     <title>Inici</title>
   </head>
   <body>
     
   	<nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
-      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.html"><h5>5 LEAF CLOVER</h5></a>
+      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="homeLoguejat.php"><h5>5 LEAF CLOVER</h5></a>
 
   		<div  id="menus" >
-        <a  id="a2" class="navbar-brand" href="#"><span class="fa fa-microphone"></span></a>
-  		  <a  id="a2" class="navbar-brand" href="home.html">Inici</a>
-        <a  id="a1"class="navbar-brand" href="ranking.html">Ranking</a>
+        <a  id="a1"class="navbar-brand" href="homeLoguejat.php">Inici</a>
+        <a  id="a1"class="navbar-brand" href="ranking.php">Ranking</a>
+        <a  id="a1"class="navbar-brand" href="lliga.php">Lliga</a>
+         <a  id="a1"class="navbar-brand" href="perfil.php"><?php echo $nom_usuari;?></a>
+          <a  id="a1"class="navbar-brand" href="php/logout.php">Logout <i style="font-size:24px" class="fa">&#xf08b;</i></a>
+        </div>
+         <div id = "btn" action="juego.php">
+         <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Jugar</button>
       </div>
-      <div id = "btn">
-  		  <button   class="btn btn-outline-success my-2 my-sm-0"  data-toggle="modal" data-target="#Modal1">Login</button>
-      </div>
-  
 </nav>
-<div>
-<img src="img/as.png" class="responsive" id="elements">
-
+  <br>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
+    margin-top: 2.2%;">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/as.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/kimetsu.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/desc1.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 </div>
 <div id = conten1>
     <h1>Què és 5 LEAF CLOVER?</h1>
@@ -47,6 +103,7 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           info+
   </button>
+</div>
     <div class="container">
   <!-- Trigger the modal with a button -->
 <!-- Modal -->
@@ -86,37 +143,67 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span  id="cruz" aria-hidden="true">&times;</span>
         </button>
+        <script type="text/javascript">
+
+            function validateForm() {
+                  var username= document.getElementById("username").value
+                if (x == "") {
+                  document.getElementById("mess").value
+                  return false;
+                  }
+            }
+           messages:document.getElementById("form-messages")
+
+        </script>
       </div>
       <div class="modal-body">
         <div id="SingIn" class="w3-container city">
-          <form>
+
+          <form action="logejat.php" method="post">
             <h5 id="ini">Iniciar Sessió</h5>
+            <ul id="form-messages"></ul>
             <label id="titleform">Username</label>
-            <input type="text" class="form-control"  placeholder="First name">
+            <input type="text" class="form-control"  placeholder="First name" name="username">
             <label id="titleform">Password</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass">
             <small id="passwordHelpBlock" class="form-text text-muted">
+            <input type="text" class="form-control"  placeholder="First name" name="username" id="username"></label>
+            <span id="error">Datos de ingreso no válidos, inténtelo de nuevo  por favor</span>
+            
+            <label id="titleform">Password</label>
+            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass" id="password">
+            <span id="error">Datos de ingreso no válidos, inténtelo de nuevo  por favor</span>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+               <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="btn-submit">Iniciar Sesion</button>
+        </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
           </form>
+
+         
       </div>
        <div id="SingUp" class="w3-container city">
-          <form>
+          <form action="php/prueba.php"  method="post">
             <h5 id="ini">Registrat si ets nou!</h5>
             <label id="titleform">Username</label>
-            <input type="text" class="form-control"  placeholder="First name">
+            <input type="text" class="form-control"  placeholder="First name" name="username">
             <label id="titleform" style="margin-right: 92%; padding-top: 10px;">Email</label>
-            <input type="text" class="form-control"  placeholder="@gmail.com">
+            <input type="text" class="form-control"  placeholder="@gmail.com" name="email">
             <label id="titleform">Password</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass">
             <small id="passwordHelpBlock" class="form-text text-muted">
-            
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+               <button type="submit" class="btn btn-primary">Registrarse</button>
+           </div>
           </form>
       </div>
 
-      
-        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
@@ -128,7 +215,7 @@
 
   </div>
   <div id = conten2>
-      <h1>Equipo</h1>
+      <h1>Equip</h1>
       <div id="sub2">
       <img id="admins" src="img/hombre.png">
       <img id="admin2" src="img/hombre.png"></div>

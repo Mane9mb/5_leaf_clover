@@ -1,40 +1,6 @@
-.profile-pic {
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    vertical-align: middle;
-    text-align: center;
-    color: transparent;
-    transition: all .3s ease;
-    text-decoration: none;
-}
-
-.profile-pic:hover {
-    background-color: rgba(0,0,0,.5);
-    z-index: 10000;
-    color: #fff;
-    transition: all .3s ease;
-    text-decoration: none;
-}
-
-.profile-pic span {
-    display: inline-block;
-    padding-top: 4.5em;
-    padding-bottom: 4.5em;
-}
-body{
-  background-image: url(img/desc.jpg);
-}
-
-
-
-
 
 #menus{
-	margin-left: 58%;
+	margin-left: 68%;
 }
 #a1{
 	margin-left: 10px;
@@ -59,6 +25,7 @@ color:green;
 }
 .navbar{
   width: 100%;
+  z-index: 100;
 }
 .modal-header{
   background-color:#343a40;
@@ -69,6 +36,11 @@ color:green;
 }
 #titleform{
   color: black;
+  margin-right: 400px;
+  padding-top: 10px;
+}
+#ini{
+  color:green;
 }
 
 
@@ -107,7 +79,6 @@ padding-left: 305px;
 #load{
 	font-size: 20px;
 	padding-top: 56px;
-  margin-left: 35%;
 
 }
 #logo{
@@ -135,6 +106,7 @@ font-size: 18px;
     
     
 }
+
 #man{
 
 
@@ -158,5 +130,6 @@ font-size: 18px;
    padding-bottom: 25px;
 
 }
+
 
 

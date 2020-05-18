@@ -13,6 +13,7 @@ class Overlay{
 		this._div = document.createElement("div");
 		
 		this._ini(e);
+		this._savedContent=null;
 	}
 
 	_ini(e){
@@ -25,6 +26,8 @@ class Overlay{
 		this._setPosition(x,y);
 		this._setSize(w,h);
 		this._div.style.backgroundColor="rgba(0,0,0,0.9)";
+		this._div.style.marginLeft = '22%'
+		this._div.style.marginTop = '92px'
 		this._visible=false;
 		this._setVisible(this._visible);
 	}
@@ -59,6 +62,15 @@ class Overlay{
 	setContent(c){
 		this._div.innerHTML = c;
 	}
+	getContent(){
+		return this._div.innerHTML;
+	}
 
+	saveContent(){
+		this._savedContent=this.getContent();
+	}
+	restoreContent(){
+		this._div.innerHTML=this._savedContent;
+	}
 
 }
