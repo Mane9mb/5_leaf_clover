@@ -1,41 +1,18 @@
-<?php
-  session_start();
-
-if(isset($_SESSION["user_id"])){
-  $user_id= $_SESSION["user_id"];
-$servername = "localhost";
-$serverusername = "5leaf";
-$serverpassword = "manelferran";
-
-// Create connection
-$conn = new mysqli($servername, $serverusername, $serverpassword);
-$conn->select_db('5leafclover');
-$data = mysqli_query($conn,"SELECT * FROM `usuaris`WHERE `id_usuario`='{$user_id}'");
-$row_cnt=mysqli_num_rows($data);
-if($row_cnt == 1){
-  $row = mysqli_fetch_array($data);
-  $nom_usuari = $row['username']; 
-}
-
-}
-else{
-  header("Location: home.php");
-  exit;
-}
-
-?>
 <!DOCTYPE HTML>
-
 <html lang="es">
   <head>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style/logejat.css">
-
+    <link rel="stylesheet" type="text/css" href="style/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
     <!-- CSS Bootsraap 4-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- icons!-->
@@ -44,30 +21,70 @@ else{
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     <script type="text/javascript" src="js/assisten.js"></script>
-    <script type="text/javascript">
-      
-    </script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
  <link rel="shortcut icon" href="img/5CLOVER.ico" />
-
-    <title>Inici</title>
+    <title>5 leaf clover</title>
   </head>
+  <script type="text/javascript">
+
+  function hablar(){
+
+  
+  var inputForm = document.querySelector('desc');
+
+
+ 
+	
+
+  if (annyang) {
+    // Definimos nuestro primer comando. Primero escribimos el comando y posteriormente la función a ejecutar.
+    var commandos = {
+      'hola': function() {
+        alert("¡Hola!");
+      },
+      'Apagar': function() {
+        alert("pausado!");
+        annyang.pause();
+      },
+      'Gas': function() {
+      	var synth = window.speechSynthesis;
+        var inputForm = document.querySelector('desc');
+        var voices = [];
+    }
+
+     
+ }
+
+ 
+// Agregamos nuestros comandos a annyang.
+    annyang.addCommands(commandos);
+
+    //Establecemos el lenguaje, en mi caso es español de México (puedes ver la lista completa de lenguajes soportados aquí).
+    annyang.setLanguage("es-ES");
+
+    // Empezmaos a escuchar.
+    annyang.start();
+  }
+  
+} 
+hablar();
+  </script>
   <body>
-    
   	<nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
-      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="homeLoguejat.php"><h5>5 LEAF CLOVER</h5></a>
+      <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.html"><h5>5 LEAF CLOVER</h5></a>
 
-  		<div  id="menus" >
-
-        <a  id="a1"class="navbar-brand" href="homeLoguejat.php">Inici</a>
-        <a  id="a1"class="navbar-brand" href="ranking.php">Ranking</a>
-        <a  id="a1"class="navbar-brand" href="lliga.php">Lliga</a>
-         <a  id="a1"class="navbar-brand" href="perfil.php"><?php echo $nom_usuari;?></a>
-          <a  id="a1"class="navbar-brand" href="php/logout.php">Logout <i style="font-size:24px" class="fa">&#xf08b;</i></a>
-        </div>
-         <div id = "btn" action="juego.php">
-         <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Jugar</button>
+      <div  id="menus" >
+        <a  id="a2" class="navbar-brand" href="home.html">Inici</a>
+        <a  id="a1"class="navbar-brand" href="uniranking.html">Ranking</a>
+		</select></a>
       </div>
+      <div id = "btn">
+        <button   class="btn btn-outline-success my-2 my-sm-0"  data-toggle="modal" data-target="#Modal1">Login</button>
+      </div>
+  
 </nav>
   <br>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
@@ -98,14 +115,22 @@ else{
   </a>
 </div>
 </div>
+
 <div id = conten1>
     <h1>Què és 5 LEAF CLOVER?</h1>
     <div id="contentDesc"><p id="desc">Et donem la benvinguda a 5 Leaf CLover, un videojoc animat en 3d on hauràs de passar nivells i millorar per aconseguir completa el joc!
         Podràs aconseguir 2 habilitats, la primera l'hauràs de triar al comensament de la partida, i l'altra et sortirà en un nivell aleatori que t'ajudarà a obtenir la victoria. Hi ha un total de 5 habilitats, escull bé i molta sort!</p>
+     
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           info+
-  </button>
+      </button>
+
+
+
+    </div>
+
 </div>
     <div class="container">
   <!-- Trigger the modal with a button -->
@@ -146,81 +171,113 @@ else{
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span  id="cruz" aria-hidden="true">&times;</span>
         </button>
-        <script type="text/javascript">
+      <script type="text/javascript">
+        function login(){
+        
+          console.log("paso por aqui pol");
+          $("#btnsubmit").hide();
+          $("login_message").html("<img src='img/loading.gif'>");
 
-            function validateForm() {
-                  var username= document.getElementById("username").value
-                if (x == "") {
-                  document.getElementById("mess").value
-                  return false;
+          var username = $("#username").val();
+          var password = $("#password").val();
+          
+          
+        $.ajax({url: "php/login.php?username="+username+"&password="+password+"", success: function(result){
+          console.log(result);
+          if(result == "succes"){
+                      console.log("entra");
+                      window.location="homeLoguejat.php";
+                   }
+                  else{
+                     $("#login_message").text("Invalid username or password! Try again.");
+                     $("#btnsubmit").show();
                   }
-            }
-           messages:document.getElementById("form-messages")
-
-        </script>
+        }});
+}
+  </script>
       </div>
       <div class="modal-body">
         <div id="SingIn" class="w3-container city">
-
-          <form action="logejat.php" method="post">
+          <form  id="formLg" action="javascript:login()" method="POST" >
             <h5 id="ini">Iniciar Sessió</h5>
             <ul id="form-messages"></ul>
             <label id="titleform">Username</label>
-            <input type="text" class="form-control"  placeholder="First name" name="username">
+            <input type="text" class="form-control"  placeholder="First name" name="username" id="username" required></label>
             <label id="titleform">Password</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass">
-            <small id="passwordHelpBlock" class="form-text text-muted">
-            <input type="text" class="form-control"  placeholder="First name" name="username" id="username"></label>
-            <span id="error">Datos de ingreso no válidos, inténtelo de nuevo  por favor</span>
-            
-            <label id="titleform">Password</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass" id="password">
-            <span id="error">Datos de ingreso no válidos, inténtelo de nuevo  por favor</span>
+            <input type="password" class="form-control" aria-describedby="passwordHelpBlock" name="password" id="password" required="">
+            <div id="login_message">
+            </div>
             <small id="passwordHelpBlock" class="form-text text-muted">
                <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" id="btn-submit">Iniciar Sesion</button>
+              <input type="submit" class="btn btn-primary" id="btnsubmit"></input>
         </div>
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/main.js"></script>
           </form>
+          <script type="text/javascript">
+            function registre(){
+        
+          console.log("paso por aqui pol");
+          $("#login_btn").hide();
+          $("login_message").html("<img src='img/loading.gif'>");
+
+          var username = $("#usuario").val();
+          var password = $("#pass").val();
+          var email = $("#mail").val();
+          console.log(email);
+          console.log(password);
+          console.log(username);
+          
+          
+        $.ajax({type: "POST",url: "php/prueba.php?username="+username+"&email="+email+"&password="+password+"", success: function(result){
+          console.log(result);
+          alert("T'has registrat correctament\nInicia sessió");
+          if(result == "succes"){
+                      console.log("entra");
+                      window.location="homeLoguejat.php";
+                      $("#login_message").text("T'has registrat correctament!");
+                   }
+                  else{
+                     $("#login_message").text("Invalid username or password! Try again.");
+                     $("#login_btn").show();
+                  }
+        }});
+
+          
+          $("#login_btn").show();
+}
+  
+  </script>
 
          
       </div>
        <div id="SingUp" class="w3-container city">
-          <form action="php/prueba.php"  method="post">
+          <form id="formLg1" action="javascript:registre()" method="POST">
             <h5 id="ini">Registrat si ets nou!</h5>
             <label id="titleform">Username</label>
-            <input type="text" class="form-control"  placeholder="First name" name="username">
+            <input type="text" class="form-control"  placeholder="First name" name="username" id="usuario" required="">
             <label id="titleform" style="margin-right: 92%; padding-top: 10px;">Email</label>
-            <input type="text" class="form-control"  placeholder="@gmail.com" name="email">
+            <input type="text" class="form-control"  placeholder="@gmail.com" name="email" id="mail" required>
             <label id="titleform">Password</label>
-            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="pass">
+            <input type="password"  class="form-control" aria-describedby="passwordHelpBlock" id="pass" name="password" required>
             <small id="passwordHelpBlock" class="form-text text-muted">
+            <div id="login_message">
+            </div>
             <div class="modal-footer">
                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-               <button type="submit" class="btn btn-primary">Registrarse</button>
+               <button type="submit" class="btn btn-primary" id="btnsubmit">Registrarse</button>
            </div>
           </form>
       </div>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+      
 </div>
   
 </div>
 
-
   </div>
   <div id = conten2>
-
       <h1>Equip</h1>
-
       <div id="sub2">
       <img id="admins" src="img/hombre.png">
       <img id="admin2" src="img/hombre.png"></div>
@@ -229,9 +286,8 @@ else{
         <h5 id="man">Manel Moreno</h5>
       
       </div>
-
-    </div>
-    <script>
+      
+      <script>
 document.getElementsByClassName("tablink")[0].click();
 
 function openEvent(evt, cityName) {
@@ -252,5 +308,9 @@ function openEvent(evt, cityName) {
 
 
 </script>
+
+
+
+    </div>
   </body>
 </html

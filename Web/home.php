@@ -72,6 +72,16 @@
 } 
 hablar();
   </script>
+    <script type="text/javascript" src="js/assisten.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      
+    </script>
+
+
+    <title>Hello, world!</title>
+  </head>
   <body>
   	<nav class="navbar navbar-dark bg-dark" style=" position: fixed; padding-right: 23px;opacity: 94%;">
       <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="home.html"><h5>5 LEAF CLOVER</h5></a>
@@ -79,7 +89,9 @@ hablar();
       <div  id="menus" >
         <a  id="a2" class="navbar-brand" href="home.html">Inici</a>
         <a  id="a1"class="navbar-brand" href="uniranking.html">Ranking</a>
+
 		</select></a>
+
       </div>
       <div id = "btn">
         <button   class="btn btn-outline-success my-2 my-sm-0"  data-toggle="modal" data-target="#Modal1">Login</button>
@@ -278,6 +290,7 @@ hablar();
   </div>
   <div id = conten2>
       <h1>Equip</h1>
+
       <div id="sub2">
       <img id="admins" src="img/hombre.png">
       <img id="admin2" src="img/hombre.png"></div>

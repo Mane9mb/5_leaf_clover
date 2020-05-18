@@ -1,17 +1,11 @@
 
 #menus{
-
-  margin-left: 57.3%;
+	margin-left: 68%;
 }
 #a1{
-  margin-left: 10px;
-    text-align: center; 
-
-	margin-left: 30%;
-}
-#a1{
-	margin-left: 30px;
-  
+	margin-left: 10px;
+  	text-align: center;	
+  	
 }
 #a1.navbar-brand:hover{
 color:green;
@@ -32,7 +26,6 @@ color:green;
 .navbar{
   width: 100%;
   z-index: 100;
-
 }
 .modal-header{
   background-color:#343a40;
@@ -52,11 +45,8 @@ color:green;
 
 
 #btn{
-
-  
-  padding-left: 10px;
-
-
+	
+	padding-left: 10px;
 }
 #conten1{
 background-color: green;
@@ -83,22 +73,6 @@ a{
 
 }
 #contentDesc{
-
-  padding-right: 305px;
-padding-left: 305px;
-}
-#load{
-  font-size: 20px;
-  padding-top: 56px;
-
-}
-#logo{
-  width: 3%;
-  height: 3%;
-}
-#nom{
-  position: absolute;
-
 	padding-right: 305px;
 padding-left: 305px;
 }
@@ -113,7 +87,6 @@ padding-left: 305px;
 }
 #nom{
 	position: absolute;
-
     height: 30px;
     padding-right: 0px;
     padding-left: 55px
@@ -127,9 +100,7 @@ font-size: 18px;
 
 }
 #admins{
-
-  margin-right: 250px;
-
+	margin-right: 250px;
     width: 200px;
     height: 200px;
     
@@ -150,9 +121,7 @@ font-size: 18px;
     
 }
 #admin2{
-
-  width: 200px;
-
+	width: 200px;
     height: 200px;
     
 }
