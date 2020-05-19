@@ -51,7 +51,6 @@ else{
       <div  id="menus" >
 
       <a  id="a2" class="navbar-brand" href="homeLoguejat.php">Inici</a>
-
         <a  id="a1"class="navbar-brand" href="ranking.php" >Ranking</a>
         <a  id="a1"class="navbar-brand" href="lliga.php" >Lliga</a>
        <a  id="a1"class="navbar-brand" href="perfil.php" ><? echo $nom_usuari;?></a>
@@ -72,7 +71,6 @@ else{
 
               <span class="glyphicon glyphicon-camera"></span>
               <span>Canvia l'imatge</span>
-
           </div>
           <img src="img/user.png" alt="foto" class="profile-pic" style="position: relative; margin-top: -17%; margin-left: 34%;">
         </a>

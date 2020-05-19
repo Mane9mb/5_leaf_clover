@@ -32,7 +32,6 @@ else{
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style/logejat.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -49,7 +48,6 @@ else{
       
     </script>
  <link rel="shortcut icon" href="img/5CLOVER.ico" />
-
     <title>Inici</title>
   </head>
   <body>
@@ -58,16 +56,15 @@ else{
       <img src="img/logo.png" class="responsive" id="logo" ><a id="nom" class="navbar-brand" href="homeLoguejat.php"><h5>5 LEAF CLOVER</h5></a>
 
   		<div  id="menus" >
-
         <a  id="a1"class="navbar-brand" href="homeLoguejat.php">Inici</a>
         <a  id="a1"class="navbar-brand" href="ranking.php">Ranking</a>
         <a  id="a1"class="navbar-brand" href="lliga.php">Lliga</a>
          <a  id="a1"class="navbar-brand" href="perfil.php"><?php echo $nom_usuari;?></a>
           <a  id="a1"class="navbar-brand" href="php/logout.php">Logout <i style="font-size:24px" class="fa">&#xf08b;</i></a>
         </div>
-         <div id = "btn" action="juego.php">
-         <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Jugar</button>
-      </div>
+         <form method="get" action="juego.php">
+        <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Jugar</button>
+      </form>
 </nav>
   <br>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
@@ -218,9 +215,7 @@ else{
 
   </div>
   <div id = conten2>
-
       <h1>Equip</h1>
-
       <div id="sub2">
       <img id="admins" src="img/hombre.png">
       <img id="admin2" src="img/hombre.png"></div>

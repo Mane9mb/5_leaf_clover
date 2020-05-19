@@ -34,27 +34,33 @@ else{
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style/juego.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="shortcut icon" href="img/5CLOVER.ico" />
     <!-- *************** -->
   <!--  Config   RC    -->
   <!-- *************** -->
-  <script type="text/javascript" src="app/js/rce/Game.js"></script>
-  <script type="text/javascript" src="app/js/CustomGame.js"></script>
-  <script type="text/javascript" src="app/js/rce/Overlay.js"></script>
-  <script type="text/javascript" src="app/js/rce/Player.js"></script>
-  <script type="text/javascript" src="app/js/rce/Map.js"></script>
-  <script type="text/javascript" src="app/js/rce/RCEngine.js"></script>
-  <script type="text/javascript" src="app/js/rce/Intersection.js"></script>
-  <script type="text/javascript" src="app/js/rce/Texture.js"></script>
-  <script type="text/javascript" src="app/js/rce/Object.js"></script>
-  <script type="text/javascript" src="app/js/rce/Room.js"></script>
-  <script type="text/javascript" src="app/js/rce/Map2dview.js"></script>
-  <script type="text/javascript" src="app/js/rce/Keyboard.js"></script>
-  <script type="text/javascript" src="app/js/rce/Mouse.js"></script>
-  <script type="text/javascript" src="app/js/rce/Data.js"></script>
-  <script type="text/javascript" src="app/js/CustomData.js"></script>
-  <script type="text/javascript" src="app/main.js"></script>
+  <script type="text/javascript" src="app/js/rce/SpeechToText.js"></script>
+    <script type="text/javascript" src="app/js/rce/Game.js"></script>
+    <script type="text/javascript" src="app/js/rce/BaseGame.js"></script>
+    <script type="text/javascript" src="app/js/CustomGame.js"></script>
+    <script type="text/javascript" src="app/js/rce/Overlay.js"></script>
+    <script type="text/javascript" src="app/js/rce/Player.js"></script>
+    <script type="text/javascript" src="app/js/rce/Map.js"></script>
+    <script type="text/javascript" src="app/js/rce/Background.js"></script>
+    <script type="text/javascript" src="app/js/rce/RCEngine.js"></script>
+    <script type="text/javascript" src="app/js/rce/Intersection.js"></script>
+    <script type="text/javascript" src="app/js/rce/Texture.js"></script>
+    <script type="text/javascript" src="app/js/rce/Object.js"></script>
+    <script type="text/javascript" src="app/js/rce/Room.js"></script>
+    <script type="text/javascript" src="app/js/rce/Map2dview.js"></script>
+    <script type="text/javascript" src="app/js/rce/Keyboard.js"></script>
+    <script type="text/javascript" src="app/js/rce/Mouse.js"></script>
+    <script type="text/javascript" src="app/js/rce/Data.js"></script>
+    <script type="text/javascript" src="app/js/CustomData.js"></script>
+    <script type="text/javascript" src="app/main.js"></script>
   <style type="text/css">
     @font-face {
       font-family: 'slkscre';
@@ -69,10 +75,17 @@ else{
     -ms-user-select: none;
     user-select: none;user-select: none; 
   overflow:auto;}
-    html, body { width:100%; height:100%; }
+    html, body { width:100%; height:100%; background-image: url(img/desc.jpg); }
     
     #info{
+      background-color: white;
       border:black solid 5px;
+    padding-bottom: 0px;
+    border-bottom-width: 5px;
+    width: 700px;
+    height: 272px;
+    margin-left: 306px;
+    display: inline-block;
     padding-bottom: 0px;
     border-bottom-width: 5px;
     width: 700px;
@@ -81,13 +94,17 @@ else{
     display: inline-block;
     }
     #pgame{
+      background-color: white;
       color:green;font-size:20px;
     }
     
     #rc{
       top:0px;
       left:0px;
+      margin-top: 92px;
+    margin-left: 22%;
     }
+
 
   </style>
   <!-- *************** -->
@@ -105,7 +122,7 @@ else{
         <a  id="a1"class="navbar-brand" href="ranking.php" >Ranking</a>
         <a  id="a1"class="navbar-brand" href="lliga.php" >Lliga</a>
        <a  id="a1"class="navbar-brand" href="perfil.php" ><?php echo $nom_usuari;?></a>
-       <a  id="a1"class="navbar-brand" href="php/logout.php">Logout</a>
+       <a  id="a1"class="navbar-brand" href="php/logout.php">Logout <i style="font-size:24px" class="fa">&#xf08b;</i></a>
       </div>
       <div id = "btn">
       <form method="get" action="juego.html">
@@ -114,35 +131,38 @@ else{
   </div>
   
 </nav>
-
-  <div>
-      <h1 id="load">EN PROCESO</h1>
-      
+<link rel="stylesheet" type="text/css" href="app/css/custom.css">
+<body>
+  <!-- *************** -->
+    <!--  Config   RC    -->
+    <!-- *************** -->
+    <canvas id="rc"  width ="800" height="600"></canvas>
+    <div id="rcinventary"> 
+      <table>
+        <tr>
+          <td id="rctableid1"></td>
+          <td id="rctableid2"></td>
+          <td id="rctableid3"></td>
+          <td id="rctableid4"></td>
+          <td id="rctableid5"></td>
+          <td id="rctableid6"></td>
+          <td id="rctableid7"></td>
+          <td id="rctableid8"></td>
+          <td id="rctableid9"></td>
+          <td id="rctableid0"></td>
+        </tr>
+      </table>
     </div>
-
-    <div id="juego">
-<!-- *************** -->
-  <!--  Config   RC    -->
-  <!-- *************** -->
-  <canvas id="rc"  width ="800" height="600" style="
-    position: initial;
-    margin-left: 306px;
-"></canvas>
-  <div id="info">
-    <h2 id="pgame">How to play:<h2>
-    <p id="pgame">[a] left</p>
-    <p id="pgame">[d] right</p>
-    <p id="pgame">[w] forward </p>
-    <p id="pgame">[s] backward</p>
-    <p id="pgame">[mouse] look left/right</p>
-    <p id="pgame">[mouse left click] fire</p>
-  </div>
-  <canvas id="miCanvas" style="border: 1px solid; display: block; display: inline"></canvas>
-  <!-- *************** -->
-  <!-- Fin Config RC   -->
-  <!-- *************** -->
-
-</div>
+    <!-- <div id="info"> -->
+    <!--  <h2>How to play:<h2> -->
+    <!--      <p>[a] left</p> -->
+    <!--      <p>[d] right</p> -->
+    <!--      <p>[w] forward </p> -->
+    <!--      <p>[s] backward</p> -->
+    <!--      <p>[mouse] look left/right</p> -->
+    <!--      <p>[mouse left click] fire</p> -->
+    <!-- </div> -->
+    <canvas id="rcMap2D" style="display: block; "></canvas>
 
   </body>
 </html

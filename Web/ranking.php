@@ -42,7 +42,6 @@ else{
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
  <link rel="shortcut icon" href="img/5CLOVER.ico" />
-
     <title>Ranking</title>
   </head>
   <body style="background-image: url(img/desc.jpg);">
@@ -55,13 +54,10 @@ else{
         <a  id="a1"class="navbar-brand" href="ranking.php" >Ranking</a>
         <a  id="a1"class="navbar-brand" href="lliga.php" >Lliga</a>
        <a  id="a1"class="navbar-brand" href="perfil.php" ><?php echo $nom_usuari;?></a>
-
        <a  id="a1"class="navbar-brand" href="php/logout.php">Logout <i style="font-size:24px" class="fa">&#xf08b;</i></a>
       </div>
       <div id = "btn">
       <form method="get" action="juego.php">
-
-       <a  id="a1"class="navbar-brand" href="php/logout.php">Logout</a>
         <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Jugar</button>
       </form>
   </div>
@@ -152,9 +148,7 @@ $(document).ready(function() {
 
 </script>
 <div id="texto"></div>   
-
   <input style="margin-top: 4%; width:35%; display: inline; margin-left: 30%;" type="text" class="form-control" id="searchTerm" placeholder="Cerca.." aria-label="Username" aria-describedby="addon-wrapping" onkeyup="doSearch()">
-
   <button type="button" class="btn btn-dark" id="audio" style="display: inline-block;"><span class="fa fa-microphone"></span></button>
       <table style="width: 59%; text-align: center; margin-left: 20%;margin-top: 2%;" id="datos">
       <thead>
