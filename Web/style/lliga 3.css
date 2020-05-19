@@ -1,0 +1,162 @@
+.profile-pic {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.profile-pic:hover {
+    background-color: rgba(0,0,0,.5);
+    z-index: 10000;
+    color: #fff;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.profile-pic span {
+    display: inline-block;
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+}
+body{
+  background-image: url(img/desc.jpg);
+}
+
+
+
+
+
+#menus{
+	margin-left: 60%;
+}
+#a1{
+	margin-left: 10px;
+  	text-align: center;	
+  	
+}
+#a1.navbar-brand:hover{
+color:green;
+}
+#a2.navbar-brand:hover{
+color:green;
+}
+#a3.navbar-brand:hover{
+color:green;
+}
+#a4.navbar-brand:hover{
+color:green;
+}
+#mod1style{
+  color:black;
+
+}
+.navbar{
+  width: 100%;
+}
+.modal-header{
+  background-color:#343a40;
+
+}
+#cruz{
+  color: white;
+}
+#titleform{
+  color: black;
+}
+
+
+#btn{
+	
+	padding-left: 10px;
+}
+#conten1{
+background-color: green;
+color:white;
+text-align: center;
+font-size: 18px;
+padding-bottom: 23px;
+padding-top: 7px;
+
+
+}
+a{
+ 
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+ 
+
+#elements{
+    width: 1440px;
+    height: 500px;
+
+}
+#contentDesc{
+	padding-right: 305px;
+padding-left: 305px;
+}
+#load{
+	font-size: 20px;
+	padding-top: 56px;
+  margin-left: 35%;
+
+}
+#logo{
+	width: 3%;
+	height: 3%;
+}
+#nom{
+	position: absolute;
+    height: 30px;
+    padding-right: 0px;
+    padding-left: 55px
+}
+
+#conten2{
+padding-top: 30px;
+color:black;
+text-align: center;
+font-size: 18px;
+
+}
+#admins{
+	margin-right: 250px;
+    width: 200px;
+    height: 200px;
+    
+    
+}
+#man{
+
+
+    justify-content: center;
+   
+    display: inline-block;
+
+}
+#ferr{
+    margin-right: 323px;
+    display: inline;
+    
+}
+#admin2{
+	width: 200px;
+    height: 200px;
+    
+}
+#sub2{
+
+   padding-bottom: 25px;
+
+}
+
+
