@@ -18,46 +18,44 @@ class CustomDATA extends DATA{
 		super._ini();
 
 let aux=`
-22222221222222222222222222222222
-2 1P                           2
-2     22222222222222222222222222                         
-2       			           2
-2     22222222222222222222222222        
-2             				2222
-2   				           2
-22222222212121216121212222222222
-      1 1                       
-      1 1                       
-      1 1                       
-      1 1                       
-2222222 222222222222222222222222
-2                              2
-2                              2
-2           1212 2121          2
-2           1       1          2
-2       22222  2 2  2222       2
-2       2      2 2     2       2
-22222222212121216121212222222222
-	1	1
-	1	1
-	1	1
-22222 	222222222222222222222222
-2                              2
-2                              2
-2           1212 2121          2
-2           1       1          2
-2       22222  2 2  2222       2
-2       2      2 2     2       2
-22222222212121216121212222222222
+11111111111111111111111111111111
+11111111111111111111111111111111
+1                              1
+1             111111111111111111
+1     P                        1
+1             111111111111111111
+1                              1
+11111111 11111111111111111111111
+       1 1                      
+       1 1                      
+11111111 11111111111111111111111
+21111111 111111111111111111111 1
+2111111                        2
+211   1  22222222222222222222222
+211 1 1                     1111
+211 1 1        11111111111111111
+211 1                         11
+111 1122111111111111111111111 11
+111 1                       1 11
+111 1111111111111111111111111 11
+1      1                       1
+1      1111 11111111111111111111
+1      1  1      111111111111111
+1      1  1 11                 1
+1      1111 1111111111111111 111
+1                      11111 111
+1111111111111111111111111111 111
+
+
+
 `;
 		this.set('map0',aux);
 
 aux=`
-<h1>Bienvenida a esta aventura</h1>
-<p>Sigue las pistas para completar la aventura</p>
-<p>Podemos comenzar viendo qué es ese extraño objeto</p>
+<h1>Bienvenida a 5leafClover</h1>
+<p>Sigue las pistas para completar el juego!</p>
 			<hr/>
-<h2>Pulsa m para abrir/cerrar esta pantalla</h2>
+<h2>Pulsa m para para salir del menú</h2>
 			<hr/>
 `;
 		this.set('welcome',aux);
@@ -105,7 +103,7 @@ aux=`
 aux=`
 <h1>Eliminar el bicho</h1>
 <p>Probemos a utilizar este objeto, quizá podamos eliminar el bicho</p>
-			<p><img src='app/img/objb.png'/></p>
+			<p><img src='app/img/habilidadfuego.png'/></p>
 <p>Volvamos a ver ...</p>
 <hr/>
 <h2>Botón izquierdo de ratón para lanzar objeto</h2>
@@ -113,9 +111,9 @@ aux=`
 `;
 		this.set('missionKill2',aux);
 aux=`
-<h1>Grietas en la pared</h1>
-<p>Una pared con grietas tiene pinta de poder ser derruida.</p>
-			<p><img src='app/img/wall3.png'/></p>
+<h1>Deshabilitado una puerta</h1>
+<p>Una puerta ha quedado deshabilitada.</p>
+			<p><img src='app/img/.png'/></p>
 			<hr/>
 <h2>Quizás utilizando un explosivo ...</h2>
 			<hr/>

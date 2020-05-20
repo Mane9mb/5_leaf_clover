@@ -16,16 +16,28 @@ function main(){
 	// Establece color degradado suelo
 	CustomGame.setGradientGround('gray','lightgray');
 	// Custom behaviour
-	CustomGame.createUsableItemShot("shot",3,3,"app/img/bomb.png","mataX");
-	CustomGame.createAnimatedItem("killable",18,4,"app/img/spriteBicho.png",1,1,20,10,2,[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"mataY",0,9,10,19);
-	CustomGame.createUsableItemShot("shot2",29,3,"app/img/habilidadfuego.png","mataY");
-	CustomGame.createBreakableWall("killablewall",14,9,"app/img/wall3.png","mataX");
+	CustomGame.createUsableItemShot("shot2",30,2,"app/img/habilidadfuego.png","mataY");
+	CustomGame.createUsableItemShot("shot2",30,4,"app/img/habilidadAgua.png","mataY");
+	CustomGame.createUsableItemShot("shot2",30,6,"app/img/habilidadaire.png","mataY");
+	CustomGame.createBreakableWall("killablewall",8,8,"app/img/wall3.png","mataY");
+	CustomGame.createBreakableWall("killablewall",29,18,"app/img/wall3.png","mataY");
+	CustomGame.createKillableItem("killableBoss",29,17,"app/img/primerboss.png","mataY");
+	CustomGame.createKillableItem("killableBoss",28,24,"app/img/tercerboss.png","mataY");
 	CustomGame.createUsableItem("skull",3,9,"app/img/objc.png");
+	CustomGame.createBreakableWall("killablewall",28,25,"app/img/wall3.png","mataY");
+	
+	//jefe secreto
 
-	CustomGame.createAnimatedItem("npc1",9,6,"app/img/spriteBicho.png",1,1,20,10,2,[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"mataY",0,9,10,19);
-	CustomGame.createAnimatedItem("npc2",10,9,"app/img/spriteBicho.png",1,1,20,10,2,[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"mataY",0,9,10,19);
+	CustomGame.createBreakableWall("killablewall",3,14,"app/img/wall3.png","mataY");
+	CustomGame.createBreakableWall("killablewall",3,15,"app/img/wall3.png","mataY");
+	CustomGame.createBreakableWall("killablewall",3,16,"app/img/wall3.png","mataY");
+	CustomGame.createBreakableWall("killablewall",3,17,"app/img/wall3.png","mataY");
+	CustomGame.createBreakableWall("killablewall",3,18,"app/img/wall3.png","mataY");
+	CustomGame.createBreakableWall("killablewall",3,19,"app/img/wall3.png","mataY");
+	CustomGame.createBreakableWall("killablewall",7,25,"app/img/wall3.png","mataY");
 
-	CustomGame.createItem("turtle",14,3,"app/img/turtle.png");
+	CustomGame.createKillableItem("killableBoss",2,24,"app/img/segundoboss.png","mataY");
+
 	CustomGame.showMessage('welcome');
 
 }

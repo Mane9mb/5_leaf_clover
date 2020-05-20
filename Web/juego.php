@@ -124,11 +124,7 @@ else{
        <a  id="a1"class="navbar-brand" href="perfil.php" ><?php echo $nom_usuari;?></a>
        <a  id="a1"class="navbar-brand" href="php/logout.php">Logout <i style="font-size:24px" class="fa">&#xf08b;</i></a>
       </div>
-      <div id = "btn">
-      <form method="get" action="juego.html">
-        <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Jugar</button>
-      </form>
-  </div>
+    
   
 </nav>
 <link rel="stylesheet" type="text/css" href="app/css/custom.css">
